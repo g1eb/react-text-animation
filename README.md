@@ -24,8 +24,7 @@ import TextAnimation from 'react-text-animation'
 3) Render `TextAnimation` component
 
 ```html
-<TextAnimation>
-</TextAnimation>
+<TextAnimation text={'hello'} />
 ```
 
 ### Properties
