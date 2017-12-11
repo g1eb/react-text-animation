@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import animations from './animations.css'
+
 class TextAnimation extends React.Component {
 
   constructor(props) {
@@ -32,9 +34,10 @@ class TextAnimation extends React.Component {
       'font-size': `${this.state.size}px`,
       'animation-duration': `${this.state.duration}s`,
     }
+
     return (
-      <div className='text-animation' style={style}>
-        {this.state.text}
+      <div className={animations[this.props.animation]} style={style}>
+        <span>{this.state.text}</span>
       </div>
     )
   }
@@ -42,6 +45,7 @@ class TextAnimation extends React.Component {
 
 TextAnimation.defaultProps = {
   text: 'abcdefghijklmnopqrstuvwxyz',
+  animation: 'floatUp',
 }
 
 export default TextAnimation
