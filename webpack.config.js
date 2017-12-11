@@ -6,7 +6,7 @@ module.exports = {
 
   entry: {
     'text-animation': './src/index.js',
-    'text-animation.min': './src/index.js'
+    'text-animation.min': './src/index.js',
   },
 
   externals: {
@@ -15,14 +15,7 @@ module.exports = {
       commonjs2: 'react',
       commonjs: 'react',
       amd: 'react',
-      umd: 'react'
-    },
-    'react-dom': {
-      root: 'ReactDOM',
-      commonjs2: 'react-dom',
-      commonjs: 'react-dom',
-      amd: 'react-dom',
-      umd: 'react-dom'
+      umd: 'react',
     },
   },
 
@@ -32,16 +25,16 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     libraryTarget: 'umd',
-    library: 'TextAnimation'
+    library: 'TextAnimation',
   },
 
   plugins: [
-    new UglifyJsPlugin({
+    new webpack.optimize.UglifyJsPlugin({
       include: /\.min\.js$/,
       minimize: true,
       compress: {
-        warnings: false
-      }
+        warnings: false,
+      },
     })
   ],
 
