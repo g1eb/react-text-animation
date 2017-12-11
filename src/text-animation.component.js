@@ -33,7 +33,7 @@ class TextAnimation extends React.Component {
       'animation-duration': `${this.state.duration}s`,
     }
     return (
-      <div className="text-animation" style={style}>
+      <div className='text-animation' style={style}>
         {this.state.text}
       </div>
     )
